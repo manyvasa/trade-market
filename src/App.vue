@@ -1,29 +1,87 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Header/>
+    <layout/>
+
   </div>
 </template>
 
+<script>
+import Header from './components/header/Header';
+import layout from './components/layout/Layout';
+
+export default {
+  components: {
+    Header,
+    layout,
+  },
+  data() {
+    return {};
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  @import "@/styles/variables.scss";
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
   }
-}
+
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-style: normal;
+    src: local('Open Sans'), local('Open-Sans'),
+    url('/components/assets/fonts/OpenSans.woff') format('woff');
+
+  }
+
+  @font-face {
+    font-family: ".SF NS Display";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: #F5F5F5;
+    font-family: $default-font-stack;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  button {
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .icon {
+    display: inline-block;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    vertical-align: middle;
+  }
+
 </style>
