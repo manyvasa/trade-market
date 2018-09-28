@@ -1,0 +1,47 @@
+table {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: table;
+  line-height: 15px;
+  font-size: 13px;
+  color: #4E5652;
+
+}
+
+thead tr {
+  border-bottom: 1px solid #F3F3F3;
+  box-shadow: 0 1px 1.25px 0 rgba(0,0,0,0.5);
+  opacity: 0.5;
+}
+tbody tr {
+  border-bottom: 1px solid #F3F3F3;
+}
+
+td {
+  height: 32px;
+  padding: 0 16px;
+}
+
+tbody::-webkit-scrollbar{
+  width: 4px;
+}
+
+tbody::-webkit-scrollbar-thumb{
+  border-width:1px 1px 1px 2px;
+  border-color: #777;
+  background-color: #aaa;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}

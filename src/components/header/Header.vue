@@ -1,18 +1,20 @@
 <template>
   <div class="header">
-    <nav class="navbar">
-      <ul class="navbar__nav">
-        <li
-          v-for="(item, index) in navItem"
-          :key="index"
-        >
-          <a href=""
-             class="navbar__link">{{ item }}</a>
-        </li>
-      </ul>
-      <a href="#"
-         class="navbar__link navbar__link--active navbar__link--user">Joe Username</a>
-    </nav>
+    <div class="header__wrapper">
+      <nav class="navbar">
+        <ul class="navbar__nav">
+          <li
+            v-for="(item, index) in navItem"
+            :key="index"
+          >
+            <a href=""
+               class="navbar__link">{{ item }}</a>
+          </li>
+        </ul>
+        <a href="#"
+           class="navbar__link navbar__link--active navbar__link--user">Joe Username</a>
+      </nav>
+    </div>
 
 
   </div>
@@ -40,11 +42,20 @@ export default {
   @import "@/styles/variables.scss";
 
   .header {
-    height: 48px;
+    width: 100%;
     background-color: $green;
-    display: flex;
-    justify-content: space-between;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    &__wrapper {
+      height: 48px;
+      width: 100%;
+      max-width: 1880px;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   .navbar {

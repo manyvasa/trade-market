@@ -20,15 +20,13 @@
       <tab :selected="true"
            name="Market">
         <div class="order-tabs__inner-field field-give">
-          <div class="order-tabs__field">
-            <label for="amount_1"
-                   class="order-tabs__label">Amount</label>
-            <input id="amount_1"
-                   type="number"
-                   placeholder="0.00"
-                   class="order-tabs__input">
-            <div class="order-tabs__input-border"/>
-          </div>
+          <label for="amount_1"
+                 class="order-tabs__label">Amount</label>
+          <input id="amount_1"
+                 type="number"
+                 placeholder="0.00"
+                 class="order-tabs__input">
+          <div class="order-tabs__input-border"/>
           <div class="order-tabs__control">
             <span>BTC</span>
             <div class="order-tabs__drop">
@@ -39,16 +37,16 @@
                      height="24"
                      aria-hidden="true">
                   <path d="
-                      M4 12c-1.105
-                      0-2-0.895-2-2s0.895-2
-                      2-2v0c1.105 0 2 0.895
-                      2 2s-0.895 2-2 2v0zM10
-                      12c-1.105
-                      0-2-0.895-2-2s0.895-2
-                      2-2v0c1.105 0 2 0.895
-                      2 2s-0.895 2-2 2v0z
-                      M16 12c-1.105 0-2-0.895-2-2s0.895-2
-                      2-2v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0z"/>
+          M4 12c-1.105
+          0-2-0.895-2-2s0.895-2
+          2-2v0c1.105 0 2 0.895
+          2 2s-0.895 2-2 2v0zM10
+          12c-1.105
+          0-2-0.895-2-2s0.895-2
+          2-2v0c1.105 0 2 0.895
+          2 2s-0.895 2-2 2v0z
+          M16 12c-1.105 0-2-0.895-2-2s0.895-2
+          2-2v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0z"/>
                 </svg>
               </button>
 
@@ -56,15 +54,13 @@
           </div>
         </div>
         <div class="order-tabs__inner-field field-get">
-          <div class="order-tabs__field">
-            <label for="amount_2"
-                   class="order-tabs__label">Amount</label>
-            <input id="amount_2"
-                   type="number"
-                   placeholder="0.00"
-                   class="order-tabs__input">
-            <div class="order-tabs__input-border"/>
-          </div>
+          <label for="amount_2"
+                 class="order-tabs__label">Amount</label>
+          <input id="amount_2"
+                 type="number"
+                 placeholder="0.00"
+                 class="order-tabs__input">
+          <div class="order-tabs__input-border"/>
           <div class="order-tabs__control">
             <span>BTC</span>
             <div class="order-tabs__drop">
@@ -190,18 +186,24 @@ export default {
 
     &__inner-field {
       display: flex;
-      justify-content: space-between;
+      //flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
     }
 
     &__control {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      position: absolute;
+      top: 19px;
+      right: 3px;
 
       span {
         display: block;
         margin-right: 8px;
         padding-bottom: 1px;
-        width: 105px;
+        //width: 105px;
         opacity: 0.6;
         color: #4E5652;
         font-family: $display-font-stack;
@@ -226,7 +228,8 @@ export default {
       border: 0;
       display: block;
       margin-top: 9px;
-      width: 50%;
+      padding-bottom: 4px;
+      width: 100%;
       outline-style: none;
       -moz-appearance: textfield;
 
@@ -251,10 +254,10 @@ export default {
 
     &__input-border {
       display: block;
-      width: 270px;
+      width: 100%;
       height: 1px;
       background-color: #7E8B85;
-      position: absolute;
+      position: relative;
     }
 
     &__text {
