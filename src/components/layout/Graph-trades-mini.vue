@@ -41,7 +41,7 @@ export default {
     flex: 1 1 100%;
     background-color: #E9F2ED;
     padding: 6px 0 6px 0;
-    margin: 0 8px 4px 8px;
+    margin: 0 0 4px 8px;
   }
 
   .item {

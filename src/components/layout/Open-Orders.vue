@@ -23,8 +23,10 @@
             <use xlink:href="#icon-search1"/>
           </svg>
 
-          <symbol id="icon-search1" viewBox="0 0 32 32">
-            <path fill="#C4CAC7" d="M31.715 28.953c0.381 0.381 0.381 0.999 0 1.381l-1.381 1.381c-0.382 0.381-1 0.381-1.381 0l-9.668-9.668c-0.105-0.105-0.175-0.229-0.222-0.361-1.983 1.449-4.418 2.314-7.063 2.314-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12 0 2.645-0.865 5.080-2.314 7.063 0.132 0.047 0.256 0.116 0.361 0.222l9.668 9.668zM12 4c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8c0-4.418-3.582-8-8-8z"></path>
+          <symbol id="icon-search1"
+                  view-box="0 0 32 32">
+            <path fill="#C4CAC7"
+                  d="M31.715 28.953c0.381 0.381 0.381 0.999 0 1.381l-1.381 1.381c-0.382 0.381-1 0.381-1.381 0l-9.668-9.668c-0.105-0.105-0.175-0.229-0.222-0.361-1.983 1.449-4.418 2.314-7.063 2.314-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12 0 2.645-0.865 5.080-2.314 7.063 0.132 0.047 0.256 0.116 0.361 0.222l9.668 9.668zM12 4c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8c0-4.418-3.582-8-8-8z"/>
           </symbol>
         </button>
         <button>
@@ -47,7 +49,7 @@
             <td :class="$tables.center">Currency</td>
             <td :class="$tables.right">Price (USD)</td>
             <td :class="$tables.center">Time</td>
-            <td>Status</td>
+            <td :class="$tables.center">Status</td>
           </tr>
         </thead>
         <tbody>
@@ -61,20 +63,22 @@
             <td :class="$tables.right">{{ item.price }}</td>
             <td :class="$tables.center">{{ item.time }}</td>
             <td>
-              {{ item.status }}
-              <button href="#">
-                <svg :class="['icon',$style.navigation]"
-                     width="24"
-                     height="24">
-                  <use xlink:href="#icon-navigation-more"/>
-                </svg>
-                <symbol id="icon-navigation-more"
-                        view-box="0 0 20 20">
-                  <title>navigation-more</title>
-                  <path fill="#C4CAC7"
-                        d="M4 12c-1.105 0-2-0.895-2-2s0.895-2 2-2v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0zM10 12c-1.105 0-2-0.895-2-2s0.895-2 2-2v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0zM16 12c-1.105 0-2-0.895-2-2s0.895-2 2-2v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0z"/>
-                </symbol>
-              </button>
+              <div :class="$style.more">
+                {{ item.status }}
+                <button href="#">
+                  <svg :class="['icon',$style.navigation]"
+                       width="24"
+                       height="24">
+                    <use xlink:href="#icon-navigation-more"/>
+                  </svg>
+                  <symbol id="icon-navigation-more"
+                          view-box="0 0 20 20">
+                    <title>navigation-more</title>
+                    <path fill="#C4CAC7"
+                          d="M4 12c-1.105 0-2-0.895-2-2s0.895-2 2-2v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0zM10 12c-1.105 0-2-0.895-2-2s0.895-2 2-2v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0zM16 12c-1.105 0-2-0.895-2-2s0.895-2 2-2v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0z"/>
+                  </symbol>
+                </button>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -152,7 +156,7 @@ export default {
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14),
     0 2px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 3px 0 rgba(0, 0, 0, 0.2);
-    flex: 1 1 590px;
+    flex: 1 1 480px;
     margin-right: 8px;
   }
 
@@ -207,6 +211,11 @@ export default {
     }
   }
 
+  .more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
   .action {
     font-size: 13px;
     letter-spacing: -0.1px;

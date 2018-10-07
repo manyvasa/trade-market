@@ -51,6 +51,7 @@ export default {
     padding: 8px 4px;
     justify-content: center;
     max-width: 1880px;
+    min-width: 1400px;
     margin: 0 auto;
   }
 
@@ -70,7 +71,7 @@ export default {
   .inner-left {
     display: flex;
     width: 76%;
-    margin: 0 4px 8px 8px;
+    padding: 0 8px 0 8px;
     flex-wrap: wrap;
   }
 
@@ -79,7 +80,6 @@ export default {
     display: flex;
     flex-direction: column;
     flex: 1 1 214px;
-    margin: 0 8px 8px 4px;
   }
 
   .box {
