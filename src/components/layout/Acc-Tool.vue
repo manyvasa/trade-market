@@ -129,7 +129,7 @@ export default {
   @import "@/styles/variables.scss";
 
   .acc-box {
-    background-color: #FFFFFF;
+    background-color: $white;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14),
     0 2px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -267,7 +267,7 @@ export default {
 
     &__btn {
       padding-left: 4px;
-      color: #C4CAC7;
+      color: $gray;
     }
   }
 

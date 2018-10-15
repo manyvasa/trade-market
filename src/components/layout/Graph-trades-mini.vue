@@ -62,7 +62,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: #4E5652;
+    color: $gray-text;
   }
 
   .label {
@@ -85,6 +85,5 @@ export default {
     line-height: 12px;
     text-align: right;
   }
-
 
 </style>

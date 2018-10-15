@@ -65,7 +65,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    align-content: flex-start;
   }
 
   .inner-left {

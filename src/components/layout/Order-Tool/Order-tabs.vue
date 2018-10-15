@@ -136,7 +136,7 @@ export default {
   @import "@/styles/variables.scss";
 
   .order-tabs {
-    background-color: #FFFFFF;
+    background-color: $white;
     border-radius: 0 0 4px 4px;
 
     &__nav {
@@ -146,8 +146,7 @@ export default {
       width: 100%;
 
       li {
-        flex-grow: 1;
-        flex-basis: 109px;
+        flex: 1 0 109px;
 
         &:nth-child(2) {
           border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -157,14 +156,14 @@ export default {
 
       .is-active {
         background-color: #66706B;
-        color: #FFFFFF;
+        color: $white;
         box-shadow: inset 0px -2px 0px 0px #5AFFB0;
       }
     }
 
     &__nav-link {
       display: block;
-      color: #4E5652;
+      color: $gray-text;
       background-color: #F4F5F5;
       font-size: 12px;
       font-weight: 600;
@@ -181,12 +180,11 @@ export default {
     &__area {
       height: 380px;
       padding: 28px 28px 38px 28px;
-      background-color: #FFFFFF;
+      background-color: $white;
     }
 
     &__inner-field {
       display: flex;
-      //flex: 1;
       flex-direction: column;
       align-items: flex-start;
       position: relative;
@@ -203,9 +201,8 @@ export default {
         display: block;
         margin-right: 8px;
         padding-bottom: 1px;
-        //width: 105px;
         opacity: 0.6;
-        color: #4E5652;
+        color: $gray-text;
         font-family: $display-font-stack;
         font-size: 15px;
         line-height: 18px;
@@ -218,7 +215,7 @@ export default {
     }
 
     &__label {
-      color: #4E5652;
+      color: $gray-text;
       font-size: 12px;
       line-height: 15px;
       font-family: $display-font-stack;
@@ -240,11 +237,11 @@ export default {
       }
 
       &:focus + div.order-tabs__input-border {
-        background-color: #45C487;
+        background-color: $green;
       }
 
       &::placeholder {
-        color: #4E5652;
+        color: $gray-text;
         opacity: 0.6;
         font-size: 15px;
         line-height: 18px;
@@ -264,7 +261,7 @@ export default {
       display: flex;
       justify-content: space-between;
       padding: 0 10px;
-      color: #4E5652;
+      color: $gray-text;
       font-family: $display-font-stack;
       font-size: 12px;
       line-height: 15px;
@@ -275,20 +272,18 @@ export default {
       height: 36px;
       width: 100%;
       border-radius: 100px;
-      color: #FFFFFF;
+      color: $white;
       position: relative;
       top: 40px;
     }
   }
 
-  .field {
-    &-give {
+  .field-give {
       margin-bottom: 40px;
-    }
+  }
 
-    &-get {
+  .field-get {
       margin-bottom: 128px;
-    }
   }
 
   .fee {

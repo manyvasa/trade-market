@@ -1,4 +1,6 @@
-# trade-market
+# HTML coding of the market layout
+### HTML + SCSS + JS
+### Example of using BEM naming and CSS Modules
 
 ## Project setup
 ```

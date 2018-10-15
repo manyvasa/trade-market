@@ -20,14 +20,15 @@
         <table :class="$style.depth">
           <tbody>
             <tr
-                v-for="item in data"
-                :key="item.id"
+              v-for="item in data"
+              :key="item.id"
             >
               <td>
-                <div :class="[$style.percent, $style.red]" :style="{width: item.percent + '%'}"></div>
+                <div :class="[$style.percent, $style.red]"
+                     :style="{width: item.percent + '%'}"/>
               </td>
-              <td>{{ item.column_1}}</td>
-              <td>{{ item.column_2}}</td>
+              <td>{{ item.column_1 }}</td>
+              <td :class="$tables.right">{{ item.column_2 }}</td>
             </tr>
           </tbody>
         </table>
@@ -39,16 +40,17 @@
       <div :class="$style.inner">
         <table :class="$style.depth">
           <tbody>
-          <tr
+            <tr
               v-for="item in data"
               :key="item.id"
-          >
-            <td>
-              <div :class="[$style.percent, $style.green]" :style="{width: item.percent + '%'}"></div>
-            </td>
-            <td>{{ item.column_1}}</td>
-            <td>{{ item.column_2}}</td>
-          </tr>
+            >
+              <td>
+                <div :class="[$style.percent, $style.green]"
+                     :style="{width: item.percent + '%'}"/>
+              </td>
+              <td>{{ item.column_1 }}</td>
+              <td :class="$tables.right">{{ item.column_2 }}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -62,35 +64,66 @@ export default {
   data() {
     return {
       data: [
-        { id: 1, column_1: '0.2474500', column_2: '11060.33', percent: 10 },
-        { id: 2, column_1: '0.3800495', column_2: '11133.90', percent: 20 },
-        { id: 3, column_1: '0.6307688', column_2: '11430.48', percent: 30 },
-        { id: 4, column_1: '0.1769000', column_2: '11977.95', percent: 40 },
-        { id: 5, column_1: '2.1901195', column_2: '11796.84', percent: 0 },
-        { id: 6, column_1: '0.3897438', column_2: '11803.02', percent: 100 },
-        { id: 7, column_1: '0.2181000', column_2: '11773.91', percent: 0 },
-        { id: 8, column_1: '0.0684162', column_2: '11034.47', percent: 34 },
-        { id: 9, column_1: '10.2608332', column_2: '11134.28', percent: 62 },
-        { id: 10, column_1: '0.8691563', column_2: '11255.22', percent: 34 },
-        { id: 11, column_1: '1.2029500', column_2: '11957.68', percent: 12 },
-        { id: 12, column_1: '0.2986390', column_2: '11389.66', percent: 72 },
-        { id: 13, column_1: '0.1581330', column_2: '11436.51', percent: 55 },
-        { id: 14, column_1: '1.6548900', column_2: '11011.85', percent: 99 },
-        { id: 15, column_1: '0.4805000', column_2: '11423.53', percent: 44 },
+        {
+          id:       1, column_1: '0.2474500', column_2: '11060.33', percent:  10,
+        },
+        {
+          id:       2, column_1: '0.3800495', column_2: '11133.90', percent:  20,
+        },
+        {
+          id:       3, column_1: '0.6307688', column_2: '11430.48', percent:  30,
+        },
+        {
+          id:       4, column_1: '0.1769000', column_2: '11977.95', percent:  40,
+        },
+        {
+          id:       5, column_1: '2.1901195', column_2: '11796.84', percent:  0,
+        },
+        {
+          id:       6, column_1: '0.3897438', column_2: '11803.02', percent:  100,
+        },
+        {
+          id:       7, column_1: '0.2181000', column_2: '11773.91', percent:  0,
+        },
+        {
+          id:       8, column_1: '0.0684162', column_2: '11034.47', percent:  34,
+        },
+        {
+          id:       9, column_1: '10.2608332', column_2: '11134.28', percent:  62,
+        },
+        {
+          id:       10, column_1: '0.8691563', column_2: '11255.22', percent:  34,
+        },
+        {
+          id:       11, column_1: '1.2029500', column_2: '11957.68', percent:  12,
+        },
+        {
+          id:       12, column_1: '0.2986390', column_2: '11389.66', percent:  72,
+        },
+        {
+          id:       13, column_1: '0.1581330', column_2: '11436.51', percent:  55,
+        },
+        {
+          id:       14, column_1: '1.6548900', column_2: '11011.85', percent:  99,
+        },
+        {
+          id:       15, column_1: '0.4805000', column_2: '11423.53', percent:  44,
+        },
       ],
     };
   },
 };
 </script>
 
+<style src="@/styles/tables.scss" lang="scss" module="$tables">
+</style>
+
 <style lang="scss" module>
+  @import "@/styles/variables.scss";
+  @import "@/styles/mixins.scss";
+
   .layout {
-    background-color: #FFFFFF;
-    border-radius: 2px 2px 0 0;
-    box-shadow: 0 0 2px 0 rgba(0,0,0,0.14),
-    0 2px 2px 0 rgba(0,0,0,0.12),
-    0 1px 3px 0 rgba(0,0,0,0.2);
-    width: 100%;
+    @extend %card-layout;
   }
 
   .head {
@@ -110,22 +143,26 @@ export default {
     height: 532px;
     overflow-y: scroll;
     overflow-x: hidden;
+
+    &::-webkit-scrollbar{
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb{
+      border-width:1px 1px 1px 2px;
+      border-color: #777;
+      background-color: #aaa;
+    }
   }
 
-  .wrapper::-webkit-scrollbar{
-    width: 4px;
-  }
-
-  .wrapper::-webkit-scrollbar-thumb{
-    border-width:1px 1px 1px 2px;
-    border-color: #777;
-    background-color: #aaa;
-  }
-
-  .left span,
-  .right span {
+  .left > span {
     display: inline-block;
     padding: 8px 16px;
+  }
+
+  .right > span {
+    display: inline-block;
+    padding: 8px 35px 8px 0;
   }
 
   .inner {
@@ -175,7 +212,7 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 4px 16px;
-    color: #4E5652;
+    color: $gray-text;
     font-size: 14px;
     font-weight: 600;
     line-height: 14px;

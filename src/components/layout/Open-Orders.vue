@@ -10,7 +10,9 @@
             :class="[$style.link, {[$style.active]: tab.isActive}]"
             href="#"
             @click.prevent="selectTab(tab)"
-          >{{ tab.name }}</a>
+          >
+            {{ tab.name }}
+          </a>
         </li>
       </ul>
       <div :class="$style.control">
@@ -149,13 +151,10 @@ export default {
 <style lang="scss" module>
 
   @import "@/styles/variables.scss";
+  @import "@/styles/mixins.scss";
 
   .layout {
-    background-color: #FFFFFF;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14),
-    0 2px 2px 0 rgba(0, 0, 0, 0.12),
-    0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    @extend %card-layout;
     flex: 1 1 480px;
     margin-right: 8px;
   }
@@ -190,7 +189,7 @@ export default {
 
   .active {
     background-color: #66706B;
-    color: #FFFFFF;
+    color: $white;
     box-shadow: inset 0px -2px 0px 0px #5AFFB0;
   }
 
