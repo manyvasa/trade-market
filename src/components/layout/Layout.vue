@@ -13,7 +13,7 @@
       </div>
       <div class="inner-right">
         <Chart-Small/>
-        <Order-Book></Order-Book>
+        <Order-Book/>
       </div>
     </div>
   </div>
